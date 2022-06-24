@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap");
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:root {
+	--primary-100: hsl(180, 52%, 96%); /* Background */
+	--primary-300: hsl(180, 31%, 95%); /* Filter Tablets */
+	--primary-500: hsl(180, 29%, 50%);
+	--primary-700: hsl(180, 8%, 52%);
+	--primary-900: hsl(180, 14%, 20%);
+}
+
+html {
+	font-family: "League Spartan", sans-serif;
+	font-weight: 500;
+	font-size: 15px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--primary-100);
+	position: relative;
+}
+
+body::before {
+	content: "";
+	position: absolute;
+	display: block;
+	background-image: url("../public/images/bg-header-mobile.svg");
+	background-color: var(--primary-500);
+	width: 100%;
+	height: 156px;
+}
+
+.app-container {
+	position: relative;
+	isolation: isolate;
+	margin-inline: auto;
+	padding-top: 15.3rem;
+	padding-bottom: 5rem;
+	width: min(1110px, calc(100vw - 3.2rem));
+}
+
+/* Filter tag section                 */
+/* ---------------------------------- */
+
+.filters-container {
+	left: 0;
+	right: 0;
+	top: 8rem;
+	position: absolute;
+	background-color: white;
+	padding: 1.3rem;
+	border-radius: 0.3rem;
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	justify-content: space-between;
+	box-shadow: 0px 1rem 2rem hsla(180, 29%, 50%, 0.25);
+}
+
+.filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	border-radius: 0.3rem;
+}
+
+.filter-tag {
+	background-color: var(--primary-300);
+	color: var(--primary-500);
+	font-weight: 700;
+	overflow: hidden;
+	display: flex;
+	align-items: stretch;
+}
+
+.filter-tag-name {
+	padding: 0.5rem;
+}
+
+.close-tag-btn {
+	background-color: var(--primary-500);
+	border: none;
+	outline: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-top-right-radius: 0.3rem;
+	border-bottom-right-radius: 0.3rem;
+	cursor: pointer;
+}
+
+.close-tag-btn:hover,
+.close-tag-btn:focus {
+	background-color: black;
+}
+
+.clear-btn {
+	border: none;
+	outline: none;
+	background: none;
+	cursor: pointer;
+	color: var(--primary-700);
+	font-weight: 700;
+}
+
+.clear-btn:hover,
+.clear-btn:focus {
+	color: var(--primary-500);
+	text-decoration: underline;
+}
+
+/* Job cards section                 */
+/* ---------------------------------- */
+
+.jobs-container {
+	display: flex;
+	flex-direction: column;
+	gap: 2.6rem;
+}
+
+.job-container {
+	position: relative;
+	background-color: white;
+	padding: 1.6rem;
+	border-radius: 0.3rem;
+	box-shadow: 0px 1rem 2rem hsla(180, 29%, 50%, 0.25);
+}
+
+.job-container.featured::before {
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 5px;
+	border-left: 5px solid var(--primary-500);
+	border-top-left-radius: 0.3rem;
+	border-bottom-left-radius: 0.3rem;
+}
+
+.job-logo {
+	position: absolute;
+	top: -1.6rem;
+}
+
+.job-logo > img {
+	width: 3.2rem;
+}
+
+.job-details {
+	padding-block: 0.6rem 1.5rem;
+	border-bottom: 1px solid var(--primary-700);
+}
+
+.job-company {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.job-company-name {
+	color: var(--primary-500);
+	font-weight: 700;
+	margin-inline-end: 1rem;
+}
+
+.badge {
+	color: white;
+	font-weight: 700;
+	border-radius: 100vmax;
+	padding: 0.4rem 0.5rem 0.3rem;
+}
+
+.badge.new {
+	background-color: var(--primary-500);
+}
+.badge.featured {
+	background-color: var(--primary-900);
+}
+
+.job-position {
+	font-weight: 700;
+	margin-block: 1rem;
+	cursor: pointer;
+}
+
+.job-position:hover,
+.job-position:focus {
+	color: var(--primary-500);
+}
+
+.job-info {
+	color: var(--primary-700);
+	display: flex;
+	gap: 1.1rem;
+}
+
+.job-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.tag {
+	cursor: pointer;
+	border: none;
+	outline: none;
+	color: var(--primary-500);
+	background-color: var(--primary-300);
+	font-weight: 700;
+	padding: 0.6rem;
+	border-radius: 0.3rem;
+}
+
+.tag:hover,
+.tag:focus {
+	color: white;
+	background-color: var(--primary-500);
+}
+
+@media only screen and (min-width: 600px) {
+	body::before {
+		background-image: url("../public/images/bg-header-desktop.svg");
+	}
+
+	.filters-container {
+		padding-inline: 2.6rem;
+	}
+
+	.job-container {
+		display: flex;
+		align-items: center;
+		gap: 1.6rem;
+		padding-inline: 2.6rem;
+	}
+
+	.job-logo {
+		position: static;
+	}
+
+	.job-logo > img {
+		width: 5.9rem;
+	}
+
+	.job-details {
+		border-bottom: none;
+	}
+
+	.job-tags {
+		margin-left: auto;
+	}
+}
