@@ -25,7 +25,7 @@ Users should be able to:
 ### Links
 
 -  Solution URL: [Add solution URL here](https://github.com/PiojoPringlense/job-listing)
--  Live Site URL: [Add live site URL here](https://piojopringlense.github.io/job-listing)
+-  Live Site URL: [Add live site URL here](https://job-listings-frontend-mentor.netlify.app/)
 
 ## My process
 
@@ -40,16 +40,17 @@ Users should be able to:
 
 I used React to build this page. I'm specially proud of the filter method used on the App.js file:
 
-```{jobs.map((job) => {
-					if (filterTags.length < 0)
-						return <Card key={job.id} job={job} addFilterTag={addFilterTag} />;
-					if (
-						filterTags.every((tag) =>
-							[job.role, job.level, ...job.languages, ...job.tools].includes(tag)
-						)
-					)
-						return <Card key={job.id} job={job} addFilterTag={addFilterTag} />;
-				})}
+```
+{jobs.map((job) => {
+	if (filterTags.length < 0)
+		return <Card key={job.id} job={job} addFilterTag={addFilterTag} />;
+			if (
+				filterTags.every((tag) =>
+					[job.role, job.level, ...job.languages, ...job.tools].includes(tag)
+				)
+			)
+			return <Card key={job.id} job={job} addFilterTag={addFilterTag} />;
+		})}
 ```
 
 ## Author
